@@ -727,12 +727,12 @@ function About() {
 
               {/* CV Button */}
               <a
-                href="Farid-Ullah-Resume.pdf.pdf"
+                href="Farid_Ullah_FullStack_Developer_CV.pdf.pdf"
                 download
                 className="cv-button"
               >
                 <span>Download CV</span>
-                <motion.div
+                <motion.div 
                   className="cv-button-glow"
                   animate={{ opacity: [0.2, 0.8, 0.2] }}
                   transition={{
