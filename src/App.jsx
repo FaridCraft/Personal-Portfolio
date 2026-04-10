@@ -184,7 +184,7 @@ function Navbar({ isDark, toggleTheme }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["About", "Skills", "Projects", "Experience", "Contact"];
+  const navLinks = ["About", "Skills", "Projects", "Experience","Certifications", "Contact"];
 
   return (
     <motion.nav
@@ -774,7 +774,9 @@ function Skills() {
       colorClass: "skill-gradient-purple",
       skills: [
         { name: "Python", level: 80 },
+        { name: "C++", level: 80 },
         { name: "Django", level: 60, learning: true },
+
         { name: "PostgreSQL", level: 70, learning: true },
       ],
     },
@@ -786,7 +788,7 @@ function Skills() {
         { name: "Git", level: 95 },
         { name: "VS Code", level: 99 },
         { name: "Py Charm", level: 95 },
-        { name: "Figma", level: 70, learning: true },
+        { name: "Dev-C++", level: 90}
       ],
     },
   ];
@@ -1156,6 +1158,291 @@ function Experience() {
   );
 }
 
+
+
+
+
+// Cretificate 
+ 
+const certs = [
+  {
+    id: 1,
+    icon: "🏅",
+    theme: "cyan",
+    title: "Frontend Development Virtual Internship",
+    issuer: "CodeAlpha",
+    date: "March 2026",
+    duration: "1 Month",
+    credential: "CA/DF1/30465",
+    description:
+      "Completed a 1-month virtual internship focused on frontend development. Received a Letter of Recommendation for excellent performance and teamwork.",
+    tags: ["HTML", "CSS", "JavaScript", "React.js"],
+    number: "01",
+  },
+  {
+    id: 2,
+    icon: "💻",
+    theme: "purple",
+    title: "Frontend Website Development Course",
+    issuer: "SkillUp Academy",
+    date: "Nov 2024 – Apr 2025",
+    duration: "6 Months",
+    credential: null,
+    description:
+      "Completed a 6-month course in frontend website development covering HTML, CSS, JavaScript, React.js, Tailwind CSS, and modern web practices.",
+    tags: ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS"],
+    number: "02",
+  },
+  {
+    id: 3,
+    icon: "🐍",
+    theme: "blue",
+    title: "Python Programming Course",
+    issuer: "SkillUp Academy",
+    date: "Apr 2025 – Jun 2025",
+    duration: "2 Months",
+    credential: null,
+    description:
+      "Completed a 2-month Python programming course covering core language fundamentals and practical programming skills.",
+    tags: ["Python", "OOP", "Data Structures", "Algorithms"],
+    number: "03",
+  },
+];
+ 
+function Starfield() {
+  const stars = Array.from({ length: 60 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 2.5 + 0.5,
+    delay: Math.random() * 6,
+    dur: Math.random() * 4 + 3,
+  }));
+ 
+  return (
+    <div className="cert-starfield" aria-hidden="true">
+      {stars.map((s) => (
+        <span
+          key={s.id}
+          className="cert-star"
+          style={{
+            left: `${s.x}%`,
+            top: `${s.y}%`,
+            width: `${s.size}px`,
+            height: `${s.size}px`,
+            animationDelay: `${s.delay}s`,
+            animationDuration: `${s.dur}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+ 
+function OrbitRings({ theme }) {
+  return (
+    <div className={`cert-orbit-wrap cert-orbit-${theme}`} aria-hidden="true">
+      <div className="cert-orbit cert-orbit-1" />
+      <div className="cert-orbit cert-orbit-2" />
+    </div>
+  );
+}
+ 
+function Counter({ value }) {
+  return <span className="cert-num">{value}</span>;
+}
+ 
+function Certifications() {
+  const cardRefs = useRef([]);
+  const sectionRef = useRef(null);
+  const [hoveredId, setHoveredId] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+ 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("cert-card--visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    cardRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+ 
+  const handleMouseMove = (e, id) => {
+    const card = cardRefs.current[id];
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+ 
+  return (
+    <section id="certifications" className="cert-section" ref={sectionRef}>
+      <Starfield />
+ 
+      <div className="cert-blob cert-blob-1" aria-hidden="true" />
+      <div className="cert-blob cert-blob-2" aria-hidden="true" />
+      <div className="cert-blob cert-blob-3" aria-hidden="true" />
+ 
+      {/* Header */}
+      <div className="cert-header">
+        <p className="cert-eyebrow">
+          <span className="section-label" />
+          // MY ACHIEVEMENTS
+          <span className="section-label" />
+        </p>
+        <h2 className="cert-title">
+          {"Certifications".split("").map((ch, i) => (
+            <span
+              key={i}
+              className="cert-title-char"
+              style={{ animationDelay: `${i * 0.05}s` }}
+            >
+              {ch === " " ? "\u00A0" : ch}
+            </span>
+          ))}
+        </h2>
+        <p className="cert-subtitle">
+          Professional credentials that validate my expertise and dedication
+        </p>
+        <div className="cert-title-bar">
+          <div className="cert-title-bar-fill" />
+        </div>
+      </div>
+ 
+      {/* Cards */}
+      <div className="cert-grid">
+        {certs.map((cert, index) => (
+          <div
+            key={cert.id}
+            className={`cert-card cert-card--${cert.theme}`}
+            ref={(el) => (cardRefs.current[index] = el)}
+            style={{ "--delay": `${index * 0.18}s` }}
+            onMouseEnter={() => setHoveredId(index)}
+            onMouseLeave={() => setHoveredId(null)}
+            onMouseMove={(e) => handleMouseMove(e, index)}
+          >
+            {hoveredId === index && (
+              <div
+                className="cert-card-glow"
+                style={{ left: mousePos.x, top: mousePos.y }}
+              />
+            )}
+ 
+            <div className="cert-corner cert-corner-tl" />
+            <div className="cert-corner cert-corner-br" />
+            <div className="cert-card-grid" aria-hidden="true" />
+            <div className={`cert-ribbon cert-ribbon--${cert.theme}`} />
+            <Counter value={cert.number} />
+ 
+            <div className="cert-icon-section">
+              <div className={`cert-icon-wrap cert-icon-wrap--${cert.theme}`}>
+                <span className="cert-icon-emoji">{cert.icon}</span>
+                <div className={`cert-icon-ring cert-icon-ring--${cert.theme}`} />
+              </div>
+              <OrbitRings theme={cert.theme} />
+            </div>
+ 
+            <div className="cert-content">
+              <div className="cert-meta-row">
+                <span className={`cert-badge cert-badge--${cert.theme}`}>
+                  {cert.issuer}
+                </span>
+                <span className="cert-duration-chip">{cert.duration}</span>
+              </div>
+ 
+              <h3 className="cert-card-title">{cert.title}</h3>
+ 
+              <div className="cert-date-row">
+                <svg className="cert-date-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <span>{cert.date}</span>
+              </div>
+ 
+              <div className="cert-divider">
+                <div className={`cert-divider-fill cert-divider-fill--${cert.theme}`} />
+              </div>
+ 
+              <p className="cert-card-desc">{cert.description}</p>
+ 
+              {cert.credential && (
+                <div className={`cert-credential cert-credential--${cert.theme}`}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="cert-cred-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <span>ID: {cert.credential}</span>
+                </div>
+              )}
+ 
+              <div className="cert-tags">
+                {cert.tags.map((tag, ti) => (
+                  <span
+                    key={tag}
+                    className={`cert-tag cert-tag--${cert.theme}`}
+                    style={{ animationDelay: `${ti * 0.08}s` }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+ 
+            <div className="cert-particles" aria-hidden="true">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={i}
+                  className={`cert-particle cert-particle--${cert.theme}`}
+                  style={{
+                    left: `${10 + i * 11}%`,
+                    animationDelay: `${i * 0.4}s`,
+                    width: `${3 + (i % 3)}px`,
+                    height: `${3 + (i % 3)}px`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+ 
+      {/* Stats bar */}
+      <div className="cert-stats">
+        {[
+          { val: "3+", label: "Certifications" },
+          { val: "9+", label: "Months of Training" },
+          { val: "1", label: "Letter of Recommendation" },
+        ].map((s) => (
+          <div key={s.label} className="cert-stat-item">
+            <span className="cert-stat-val">{s.val}</span>
+            <span className="cert-stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+
+
+
+
+
+
+
+
 // Contact Section
 function Contact() {
   const ref = useRef(null);
@@ -1434,6 +1721,7 @@ export function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Certifications />
       <Contact />
       <Footer />
     </div>
@@ -1441,3 +1729,17 @@ export function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

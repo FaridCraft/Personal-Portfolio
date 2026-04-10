@@ -48,7 +48,9 @@
   background-color: var(--bg-primary);
   min-height: 100vh;
   scroll-behavior: smooth;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -174,7 +176,7 @@
   .mobile-nav-right {
     display: none;
   }
-  
+
   .mobile-nav-right .theme-toggle-btn {
     display: none;
   }
@@ -307,7 +309,12 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 50%,
+    var(--bg-primary) 100%
+  );
 }
 
 .hero-background {
@@ -382,7 +389,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.2;
-  background-image: 
+  background-image:
     linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -641,7 +648,12 @@
 .cta-shine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
 }
 
 .cta-content {
@@ -992,24 +1004,48 @@
 }
 
 .projects-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(6, 182, 212, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(168, 85, 247, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 20%,
+      rgba(59, 130, 246, 0.03) 0%,
+      transparent 50%
+    );
   z-index: 1;
 }
 
 .theme-light .projects-section::before {
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(6, 182, 212, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(168, 85, 247, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 20%,
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 50%
+    );
 }
 
 .projects-section .container {
@@ -1056,7 +1092,11 @@
 .project-image-container {
   position: relative;
   height: 200px;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.1) 0%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1200,7 +1240,7 @@
 }
 
 .project-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -1292,7 +1332,7 @@
   .timeline-left {
     flex-direction: row;
   }
-  
+
   .timeline-right {
     flex-direction: row-reverse;
   }
@@ -1329,11 +1369,11 @@
     width: 50%;
     padding-left: 0;
   }
-  
+
   .timeline-left .timeline-content-wrapper {
     padding-right: 3rem;
   }
-  
+
   .timeline-right .timeline-content-wrapper {
     padding-left: 3rem;
   }
@@ -1651,7 +1691,9 @@
   overflow: hidden;
   background: linear-gradient(135deg, #000dff, #6b73ff);
   box-shadow: 0 8px 20px rgba(107, 115, 255, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .cv-button:hover {
@@ -1670,8 +1712,1190 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
   z-index: 1;
   pointer-events: none;
   border-radius: 50%;
+}
+
+/* ================================================================
+   CERTIFICATIONS SECTION — Styled to match Experience section palette
+   ================================================================ */
+
+/* ================================================================
+   SECTION WRAPPER
+   ================================================================ */
+.cert-section {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 100px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  overflow: hidden;
+  isolation: isolate;
+  transition: background-color 0.3s ease;
+}
+
+/* ================================================================
+   AMBIENT BLOBS — Experience palette (cyan + purple + pink)
+   ================================================================ */
+.cert-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobFloat 10s ease-in-out infinite alternate;
+}
+
+.cert-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.12) 0%,
+    transparent 70%
+  );
+  top: -120px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.cert-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.12) 0%,
+    transparent 70%
+  );
+  bottom: -80px;
+  right: -100px;
+  animation-delay: 3s;
+}
+
+.cert-blob-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.08) 0%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 6s;
+}
+
+@keyframes blobFloat {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(30px, 20px) scale(1.08);
+  }
+}
+
+/* ================================================================
+   STARFIELD
+   ================================================================ */
+.cert-starfield {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cert-star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--text-dim);
+  opacity: 0.4;
+  animation: starTwinkle var(--dur, 4s) ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+.cert-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 70px;
+  animation: headerReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* eyebrow — cyan like timeline-year */
+.cert-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--accent-primary);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.cert-eyebrow-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  /* Experience gradient: cyan → purple */
+  background: linear-gradient(90deg, transparent, #06b6d4);
+  animation: eyebrowExpand 1s 0.5s ease both;
+}
+
+.cert-eyebrow-line:last-child {
+  background: linear-gradient(90deg, #a855f7, transparent);
+}
+
+@keyframes eyebrowExpand {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 40px;
+    opacity: 1;
+  }
+}
+
+/* title */
+.cert-title {
+  font-size: clamp(1.4rem, 3vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.cert-title-char {
+  display: inline-block;
+  opacity: 0;
+  animation: charDrop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  /* Experience gradient: cyan → purple → pink */
+  color: #fff;
+}
+
+@keyframes charDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-6deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+/* subtitle */
+.cert-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s 0.8s ease both;
+}
+
+/* animated underbar — cyan → purple → pink */
+.cert-title-bar {
+  width: 160px;
+  height: 3px;
+  background: var(--border-color);
+  border-radius: 99px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.cert-title-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #06b6d4, #a855f7, #ec4899);
+  border-radius: 99px;
+  animation: barSweep 1.2s 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes barSweep {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ================================================================
+   GRID
+   ================================================================ */
+.cert-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1160px;
+}
+
+/* ================================================================
+   CARD BASE
+   ================================================================ */
+.cert-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 40px 32px 32px;
+  overflow: hidden;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background-color 0.3s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.cert-card--visible {
+  animation: cardIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) var(--delay, 0s) both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cert-card:hover {
+  transform: translateY(-10px) scale(1.015);
+}
+
+/* ── ALL cards use the Experience cyan glow on hover ── */
+.cert-card--cyan:hover {
+  box-shadow:
+    0 30px 80px rgba(6, 182, 212, 0.25),
+    0 0 0 1px rgba(34, 211, 238, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+.cert-card--purple:hover {
+  box-shadow:
+    0 30px 80px rgba(168, 85, 247, 0.25),
+    0 0 0 1px rgba(196, 132, 252, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(196, 132, 252, 0.4);
+}
+
+.cert-card--blue:hover {
+  box-shadow:
+    0 30px 80px rgba(236, 72, 153, 0.2),
+    0 0 0 1px rgba(236, 72, 153, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+/* ================================================================
+   MOUSE-FOLLOWING GLOW
+   ================================================================ */
+.cert-card-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.15) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-card--purple .cert-card-glow {
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.cert-card--blue .cert-card-glow {
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+/* ================================================================
+   CORNER ACCENTS — cyan like experience corners
+   ================================================================ */
+.cert-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  opacity: 0;
+  z-index: 3;
+}
+
+.cert-card:hover .cert-corner {
+  opacity: 1;
+}
+
+.cert-corner-tl {
+  top: 16px;
+  left: 16px;
+  border-top: 2px solid rgba(6, 182, 212, 0.7);
+  border-left: 2px solid rgba(6, 182, 212, 0.7);
+  border-radius: 4px 0 0 0;
+  transform: translate(-4px, -4px);
+}
+.cert-card:hover .cert-corner-tl {
+  transform: translate(0, 0);
+}
+
+.cert-corner-br {
+  bottom: 16px;
+  right: 16px;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.7);
+  border-right: 2px solid rgba(6, 182, 212, 0.7);
+  border-radius: 0 0 4px 0;
+  transform: translate(4px, 4px);
+}
+.cert-card:hover .cert-corner-br {
+  transform: translate(0, 0);
+}
+
+/* purple card corners */
+.cert-card--purple .cert-corner-tl,
+.cert-card--purple .cert-corner-br {
+  border-color: rgba(168, 85, 247, 0.7);
+}
+
+/* blue → pink card corners */
+.cert-card--blue .cert-corner-tl,
+.cert-card--blue .cert-corner-br {
+  border-color: rgba(236, 72, 153, 0.7);
+}
+
+/* ================================================================
+   CARD GRID PATTERN
+   ================================================================ */
+.cert-card-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 24px;
+  opacity: 0.35;
+}
+
+/* ================================================================
+   TOP RIBBON — Experience timeline gradient
+   ================================================================ */
+.cert-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 4;
+}
+
+.cert-card:hover .cert-ribbon {
+  transform: scaleX(1);
+}
+
+/* cyan → purple → pink across all cards */
+.cert-ribbon--cyan {
+  background: linear-gradient(90deg, #06b6d4, #22d3ee, #a855f7);
+}
+.cert-ribbon--purple {
+  background: linear-gradient(90deg, #a855f7, #c084fc, #ec4899);
+}
+.cert-ribbon--blue {
+  background: linear-gradient(90deg, #ec4899, #f472b6, #06b6d4);
+}
+
+/* ================================================================
+   CARD NUMBER WATERMARK
+   ================================================================ */
+.cert-num {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--border-light);
+  opacity: 0.15;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  letter-spacing: -2px;
+}
+
+.cert-card:hover .cert-num {
+  opacity: 0.25;
+  transform: scale(1.05);
+}
+
+/* ================================================================
+   ICON SECTION
+   ================================================================ */
+.cert-icon-section {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 28px;
+  z-index: 2;
+}
+
+.cert-icon-wrap {
+  position: relative;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconFloat 4s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+/* cyan — matches timeline-dot-active */
+.cert-icon-wrap--cyan {
+  background: linear-gradient(135deg, #0e7490, #06b6d4);
+  box-shadow:
+    0 8px 32px rgba(6, 182, 212, 0.45),
+    0 0 0 1px rgba(34, 211, 238, 0.3);
+  animation:
+    iconFloat 4s ease-in-out infinite,
+    iconPulseCyan 2.5s ease-in-out infinite;
+}
+
+.cert-icon-wrap--purple {
+  background: linear-gradient(135deg, #7e22ce, #a855f7);
+  box-shadow:
+    0 8px 32px rgba(168, 85, 247, 0.45),
+    0 0 0 1px rgba(196, 132, 252, 0.3);
+  animation:
+    iconFloat 4s ease-in-out infinite,
+    iconPulsePurple 2.5s ease-in-out infinite;
+}
+
+/* "blue" slot → pink to complete cyan→purple→pink */
+.cert-icon-wrap--blue {
+  background: linear-gradient(135deg, #be185d, #ec4899);
+  box-shadow:
+    0 8px 32px rgba(236, 72, 153, 0.45),
+    0 0 0 1px rgba(244, 114, 182, 0.3);
+  animation:
+    iconFloat 4s ease-in-out infinite,
+    iconPulsePink 2.5s ease-in-out infinite;
+}
+
+@keyframes iconPulseCyan {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 32px rgba(6, 182, 212, 0.45),
+      0 0 0 1px rgba(34, 211, 238, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 8px 40px rgba(6, 182, 212, 0.7),
+      0 0 0 4px rgba(34, 211, 238, 0.15);
+  }
+}
+
+@keyframes iconPulsePurple {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 32px rgba(168, 85, 247, 0.45),
+      0 0 0 1px rgba(196, 132, 252, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 8px 40px rgba(168, 85, 247, 0.7),
+      0 0 0 4px rgba(196, 132, 252, 0.15);
+  }
+}
+
+@keyframes iconPulsePink {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 32px rgba(236, 72, 153, 0.45),
+      0 0 0 1px rgba(244, 114, 182, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 8px 40px rgba(236, 72, 153, 0.7),
+      0 0 0 4px rgba(244, 114, 182, 0.15);
+  }
+}
+
+.cert-icon-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: block;
+  animation: emojiPop 3.5s ease-in-out infinite;
+}
+
+@keyframes emojiPop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+/* icon ring */
+.cert-icon-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+
+.cert-card:hover .cert-icon-ring {
+  opacity: 1;
+}
+
+.cert-icon-ring--cyan {
+  border: 1px solid rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.35);
+}
+.cert-icon-ring--purple {
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.35);
+}
+.cert-icon-ring--blue {
+  border: 1px solid rgba(236, 72, 153, 0.6);
+  box-shadow: 0 0 16px rgba(236, 72, 153, 0.35);
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+/* ================================================================
+   ORBIT RINGS
+   ================================================================ */
+.cert-orbit-wrap {
+  position: absolute;
+  inset: -14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.cert-card:hover .cert-orbit-wrap {
+  opacity: 1;
+}
+
+.cert-orbit {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed;
+  animation: orbitSpin 6s linear infinite;
+}
+
+.cert-orbit-2 {
+  inset: 8px;
+  animation-direction: reverse;
+  animation-duration: 4s;
+}
+
+.cert-orbit-cyan .cert-orbit {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+.cert-orbit-purple .cert-orbit {
+  border-color: rgba(168, 85, 247, 0.35);
+}
+.cert-orbit-blue .cert-orbit {
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================================
+   CONTENT AREA
+   ================================================================ */
+.cert-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* meta row */
+.cert-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid;
+}
+
+/* cyan — matches timeline-year */
+.cert-badge--cyan {
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+.cert-badge--purple {
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(196, 132, 252, 0.35);
+}
+
+/* blue → pink */
+.cert-badge--blue {
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.12);
+  border-color: rgba(244, 114, 182, 0.35);
+}
+
+.cert-duration-chip {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.4px;
+}
+
+/* title */
+.cert-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.45;
+  transition: color 0.3s ease;
+}
+
+/* date row */
+.cert-date-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* cyan tint on hover — like timeline-company */
+.cert-card--cyan:hover .cert-date-row {
+  color: #06b6d4;
+}
+.cert-card--purple:hover .cert-date-row {
+  color: #a855f7;
+}
+.cert-card--blue:hover .cert-date-row {
+  color: #ec4899;
+}
+
+.cert-date-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+/* ================================================================
+   ANIMATED DIVIDER — cyan → purple → pink sweep
+   ================================================================ */
+.cert-divider {
+  height: 1px;
+  background: var(--border-color);
+  border-radius: 99px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.cert-divider-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-card:hover .cert-divider-fill {
+  width: 100%;
+}
+
+.cert-divider-fill--cyan {
+  background: linear-gradient(90deg, #06b6d4, #a855f7);
+}
+.cert-divider-fill--purple {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+}
+.cert-divider-fill--blue {
+  background: linear-gradient(90deg, #ec4899, #06b6d4);
+}
+
+/* description */
+.cert-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.cert-card:hover .cert-card-desc {
+  color: var(--text-secondary);
+}
+
+/* ================================================================
+   CREDENTIAL BADGE
+   ================================================================ */
+.cert-credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cert-card:hover .cert-credential {
+  transform: translateY(-2px);
+}
+
+.cert-credential--cyan {
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+}
+
+.cert-credential--purple {
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(196, 132, 252, 0.25);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.1);
+}
+
+.cert-credential--blue {
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
+}
+
+.cert-card:hover .cert-credential--cyan {
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+}
+.cert-card:hover .cert-credential--purple {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3);
+}
+.cert-card:hover .cert-credential--blue {
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+}
+
+.cert-cred-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+/* ================================================================
+   TAGS — matches experience timeline-tag style
+   ================================================================ */
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.cert-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease;
+  animation: tagFadeIn 0.5s ease both;
+}
+
+@keyframes tagFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cert-tag:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.cert-tag--cyan {
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.35);
+  background: rgba(6, 182, 212, 0.08);
+}
+.cert-tag--cyan:hover {
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+}
+
+.cert-tag--purple {
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.35);
+  background: rgba(168, 85, 247, 0.08);
+}
+.cert-tag--purple:hover {
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
+}
+
+/* blue → pink */
+.cert-tag--blue {
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.35);
+  background: rgba(236, 72, 153, 0.08);
+}
+.cert-tag--blue:hover {
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+}
+
+/* ================================================================
+   FLOATING PARTICLES
+   ================================================================ */
+.cert-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 24px;
+  z-index: 0;
+}
+
+.cert-particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleRise 6s ease-in-out infinite;
+}
+
+.cert-card:hover .cert-particle {
+  opacity: 1;
+}
+
+.cert-particle--cyan {
+  background: radial-gradient(circle, #22d3ee, #06b6d4);
+}
+.cert-particle--purple {
+  background: radial-gradient(circle, #c084fc, #a855f7);
+}
+.cert-particle--blue {
+  background: radial-gradient(circle, #f472b6, #ec4899);
+}
+
+@keyframes particleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100%) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* ================================================================
+   STATS BAR — gradient top bar matches timeline-line
+   ================================================================ */
+.cert-stats {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 70px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 28px 48px;
+  backdrop-filter: blur(10px);
+  animation: statsReveal 0.8s 1.2s ease both;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* top bar: cyan → purple → pink (mirrors timeline-line) */
+.cert-stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #06b6d4, #a855f7, #ec4899);
+  animation: barSweep 1.5s 1.5s ease both;
+}
+
+@keyframes statsReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cert-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 40px;
+  position: relative;
+}
+
+.cert-stat-item + .cert-stat-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: var(--border-color);
+}
+
+/* stat numbers: cyan → purple → pink gradient */
+.cert-stat-val {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #06b6d4, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  animation: countUp 1s 1.4s ease both;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cert-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* ================================================================
+   SHARED UTILITY
+   ================================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 768px) {
+  .cert-section {
+    padding: 80px 16px 60px;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-stats {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 32px;
+  }
+  .cert-stat-item + .cert-stat-item::before {
+    display: none;
+  }
+  .cert-stat-item {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-card {
+    padding: 30px 22px 26px;
+  }
+  .cert-title {
+    font-size: 2rem;
+  }
+  .cert-stats {
+    display: none;
+  }
+}
+
+/* ================================================================
+   LIGHT MODE OVERRIDES
+   ================================================================ */
+
+/* ── Option 1: if your app uses class="light-mode" on body ── */
+body.light-mode .cert-title,
+body.light-mode .cert-title-char {
+  color: #000000 !important;
+}
+
+/* ── Option 2: if your app uses data-theme="light" on html ── */
+[data-theme="light"] .cert-title,
+[data-theme="light"] .cert-title-char {
+  color: #000000 !important;
+}
+
+/* ── Option 3: if your app uses class="light" on body ── */
+body.light .cert-title,
+body.light .cert-title-char {
+  color: #000000 !important;
 }
