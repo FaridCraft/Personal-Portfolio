@@ -1066,44 +1066,38 @@ function Experience() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const experiences = [
-    {
-      year: "2025 – Present",
-      title: "Freelance Web Developer",
-      company: "Self-Employed · Dera Ismail Khan",
-      description:
-        "Working as a freelance web developer, building responsive and user-friendly websites for local clients, including schools and small businesses. Managing complete projects from planning to deployment while maintaining strong client communication.",
-      current: true,
-    },
-    {
-      year: "2026 – Present",
-      title: "Web Development Trainee",
-      company: "SkillUp Academy",
-      description:
-        "Enrolled in a structured web development program, focusing on frontend technologies, real-world projects, and best practices. Gained hands-on experience with HTML, CSS, JavaScript, React, and modern development workflows.",
-    },
-    {
-      year: "2026 – Present",
-      title: "ICS Student",
-      company: "Commerce College Dera Ismail Khan",
-      description:
-        "Currently studying ICS and have successfully passed the 2nd year. Balancing academic studies with practical web development and continuous skill improvement.",
-    },
-    {
-      year: "2026 – Present",
-      title: "Backend Development (Django)",
-      company: "Learning & Practice",
-      description:
-        "Actively learning backend development using Django, including database design, authentication, FAST APIs, and server-side logic to grow into a full-stack developer.",
-    },
-    {
-      year: "19 Nov 2024",
-      title: "Started Web Development Journey",
-      company: "Self-Taught",
-      description:
-        "Started my web development journey by learning the fundamentals of HTML, CSS, and JavaScript, which built a strong foundation for modern web development.",
-    },
-  ];
+ const experiences = [
+  {
+    year: "March 2026 (1 Month)",
+    title: "Frontend Development Virtual Internship",
+    company: "CodeAlpha · Credential ID: CA/DF1/30465",
+    description:
+      "Completed a 1-month virtual internship focused on frontend development. Received a Letter of Recommendation for excellent performance and teamwork.",
+    current: true,
+  },
+  {
+    year: "Nov 2024 – Present",
+    title: "Junior Web Developer / Trainee",
+    company: "SkillUp Academy · Dera Ismail Khan",
+    description:
+      "Hands-on training in modern web development. Working with HTML, CSS, JavaScript, Tailwind CSS, and React on real-world projects.",
+    current: true,
+  },
+  {
+    year: "2024 – Present",
+    title: "Backend Development (Django)",
+    company: "Self-Taught",
+    description:
+      "Teaching myself Django basics including models, views, templates, and authentication. Building small projects to connect frontend with a working backend.",
+  },
+  {
+    year: "2023 – Present",
+    title: "Intermediate in Computer Science (ICS)",
+    company: "Commerce College · Dera Ismail Khan",
+    description:
+      "Successfully passed 2nd year. Focus on computer science fundamentals and practical web development.",
+  },
+];
 
   return (
     <section id="experience" className="experience-section" ref={ref}>
