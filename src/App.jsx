@@ -1412,18 +1412,7 @@ function Certifications() {
       </div>
  
       {/* Stats bar */}
-      <div className="cert-stats">
-        {[
-          { val: "3+", label: "Certifications" },
-          { val: "9+", label: "Months of Training" },
-          { val: "1", label: "Letter of Recommendation" },
-        ].map((s) => (
-          <div key={s.label} className="cert-stat-item">
-            <span className="cert-stat-val">{s.val}</span>
-            <span className="cert-stat-label">{s.label}</span>
-          </div>
-        ))}
-      </div>
+      
     </section>
   );
 }
