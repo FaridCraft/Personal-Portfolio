@@ -775,7 +775,7 @@ function Skills() {
       skills: [
         { name: "Python", level: 80 },
         { name: "C++", level: 80 },
-        { name: "Django", level: 60, learning: true },
+        // { name: "Django", level: 60, learning: true },
 
         { name: "PostgreSQL", level: 70, learning: true },
       ],
