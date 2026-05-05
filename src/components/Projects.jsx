@@ -1,0 +1,140 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { SectionLabel } from "./ui/SectionLabel";
+
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description: "A full-featured online store with cart functionality, payment integration, and admin dashboard.",
+    emoji: "🛒",
+    tech: ["React", "CSS"],
+    liveUrl: "https://luxe-store-web.netlify.app",
+    githubUrl: "https://github.com/FaridCraft/LUXE-Store",
+  },
+  {
+    title: "Task Management App",
+    description: "Collaborative project management tool with real-time updates and team features.",
+    emoji: "📋",
+    tech: ["React", "CSS"],
+    liveUrl: "https://task-flow-proo.netlify.app/",
+    githubUrl: "https://github.com/FaridCraft/TaskFlow-Pro",
+  },
+  {
+    title: "Weather Dashboard",
+    description: "Beautiful weather application with location-based forecasts and interactive maps.",
+    emoji: "🌤️",
+    tech: ["JavaScript", "OpenWeather API", "CSS"],
+    liveUrl: "https://weather-hub-web.netlify.app/",
+    githubUrl: "https://github.com/FaridCraft/WeatherHub",
+  },
+  {
+    title: "Movie Hub",
+    description: "Modern movie discovery platform with search and filtering capabilities.",
+    emoji: "🎬",
+    tech: ["React.js", "CSS"],
+    liveUrl: "https://moviehub-react-app.netlify.app",
+    githubUrl: "https://github.com/FaridCraft/MovieHub",
+  },
+  {
+    title: "Fitness Tracker",
+    description: "Personal fitness application for tracking workouts, nutrition, and progress.",
+    emoji: "💪",
+    tech: ["React.js", "CSS"],
+    liveUrl: "https://fit-life-pro-webs.netlify.app/",
+    githubUrl: "https://github.com/FaridCraft/fit-Life-pro-website",
+  },
+  {
+    title: "Stopwatch",
+    description: "A sleek and functional stopwatch application with multiple timer modes.",
+    emoji: "⏱️",
+    tech: ["React.js", "TailwindCss"],
+    liveUrl: "https://stopwatch-web-site.netlify.app/",
+    githubUrl: "https://github.com/FaridCraft/Stopewatch",
+  },
+];
+
+export function Projects() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="projects" className="py-16 sm:py-20 md:py-32 bg-slate-900" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 sm:mb-16"
+        >
+          <SectionLabel>// Featured Work</SectionLabel>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4">
+            My{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+              Projects
+            </span>
+          </h2>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-slate-800/50 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/30 transition-all group"
+            >
+              {/* Project Image Container */}
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center overflow-hidden">
+                <span className="text-4xl sm:text-5xl md:text-6xl">{project.emoji}</span>
+                
+                {/* Overlay with Links */}
+                <div className="absolute inset-0 bg-slate-900/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 sm:gap-4">
+                  <motion.a
+                    href={project.liveUrl}
+                    className="p-2 sm:p-3 rounded-full bg-cyan-500 text-white hover:bg-cyan-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaExternalLinkAlt size={18} className="sm:w-5 sm:h-5" />
+                  </motion.a>
+                  <motion.a
+                    href={project.githubUrl}
+                    className="p-2 sm:p-3 rounded-full bg-slate-700 text-white hover:bg-slate-600 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaGithub size={18} className="sm:w-5 sm:h-5" />
+                  </motion.a>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-slate-400 text-xs sm:text-sm mb-3 sm:mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-full bg-slate-700/50 text-slate-300 border border-slate-600/50"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
