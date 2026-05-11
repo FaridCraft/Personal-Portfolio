@@ -34,7 +34,7 @@ export function Hero() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 md:w-150 md:h-150 bg-blue-500/10 rounded-full blur-3xl"
           animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
@@ -59,10 +59,13 @@ export function Hero() {
       </div>
 
       {/* Grid Background */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-        backgroundSize: '40px 40px'
-      }} />
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
 
       <motion.div style={{ y, opacity }} className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         {/* Welcome Badge */}
@@ -98,7 +101,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 1.2 }}
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-purple-500 to-pink-500">
               Faridullah
             </span>
           </motion.h1>
@@ -121,7 +124,7 @@ export function Hero() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-xl sm:text-2xl md:text-3xl font-bold"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
                 {roles[currentRoleIndex]}
               </span>
             </motion.div>
@@ -137,17 +140,19 @@ export function Hero() {
           className="mb-8 md:mb-12"
         >
           <p className="text-slate-400 text-sm sm:text-base md:text-xl leading-relaxed px-4">
-            {["Crafting", "digital", "experiences", "with", "clean", "code", "and", "creative", "solutions."].map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 2.4 + index * 0.1 }}
-                className="inline-block mr-2"
-              >
-                {word}
-              </motion.span>
-            ))}
+            {["Crafting", "digital", "experiences", "with", "clean", "code", "and", "creative", "solutions."].map(
+              (word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 2.4 + index * 0.1 }}
+                  className="inline-block mr-2"
+                >
+                  {word}
+                </motion.span>
+              )
+            )}
           </p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -168,15 +173,15 @@ export function Hero() {
         >
           <motion.a
             href="#projects"
-            className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm sm:text-base overflow-hidden group"
+            className="relative px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm sm:text-base overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="absolute inset-0 bg-linear-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative flex items-center gap-2">
               View Projects
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
+                <ExternalLink size={16} className="sm:w-4.5 sm:h-4.5" />
               </motion.span>
             </span>
           </motion.a>

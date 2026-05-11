@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ui/ThemeToggle";
 
-export function Navbar({ isDark, toggleTheme }) {
+// Note: removed import { ThemeToggle } from "./ui/ThemeToggle";
+
+
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,7 +15,14 @@ export function Navbar({ isDark, toggleTheme }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["About", "Skills", "Projects", "Experience", "Certifications", "Contact"];
+  const navLinks = [
+    "About",
+    "Skills",
+    "Projects",
+    "Experience",
+    "Certifications",
+    "Contact",
+  ];
 
   return (
     <motion.nav
@@ -53,12 +62,12 @@ export function Navbar({ isDark, toggleTheme }) {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
-            <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+            {/* Removed: <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} /> */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+            {/* Removed: <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} /> */}
             <button
               className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 text-slate-300 hover:text-white hover:bg-slate-700/50 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
