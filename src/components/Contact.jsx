@@ -62,7 +62,7 @@ export function Contact() {
           <SectionLabel>// Get In Touch</SectionLabel>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
             Let's{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Work Together
             </span>
           </h2>
@@ -117,7 +117,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg hover:from-cyan-400 hover:to-blue-500 disabled:opacity-50 transition-all group"
+              className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg hover:from-cyan-400 hover:to-blue-500 disabled:opacity-50 transition-all group"
             >
               {isSubmitting ? (
                 <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
