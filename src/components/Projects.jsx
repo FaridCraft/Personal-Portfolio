@@ -84,7 +84,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-16 sm:py-20 md:py-32 bg-slate-900"
+      className="py-12 sm:py-16 md:py-20 lg:py-32 bg-slate-900"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,20 +94,20 @@ export function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           <SectionLabel>// Featured Work</SectionLabel>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4">
-            My{" "}
-            <span className="text-transparent bg-clip-text bg-liner-to-r from-cyan-400 to-purple-500">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 sm:mt-4 px-4">
+            My Featured Work{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
               Projects
             </span>
           </h2>
         </motion.div>
 
         {/* Project Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -122,7 +122,7 @@ export function Projects() {
             >
 
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 sm:h-52 md:h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -140,8 +140,9 @@ export function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-3 rounded-full bg-cyan-500 text-white hover:bg-cyan-400 transition-colors"
+                    aria-label="View live demo"
                   >
-                    <FaExternalLinkAlt />
+                    <FaExternalLinkAlt className="text-lg" />
                   </motion.a>
 
                   {/* GitHub */}
@@ -152,19 +153,20 @@ export function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-3 rounded-full bg-slate-700 text-white hover:bg-slate-600 transition-colors"
+                    aria-label="View GitHub repository"
                   >
-                    <FaGithub />
+                    <FaGithub className="text-lg" />
                   </motion.a>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+              <div className="p-4 sm:p-5 md:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 line-clamp-1">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-400 text-sm mb-4">
+                <p className="text-slate-400 text-xs sm:text-sm mb-4 line-clamp-2 sm:line-clamp-3">
                   {project.description}
                 </p>
 
@@ -173,7 +175,7 @@ export function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs px-3 py-1 rounded-full bg-slate-700/50 text-slate-300 border border-slate-600/50"
+                      className="text-xs px-2.5 py-1 rounded-full bg-slate-700/50 text-slate-300 border border-slate-600/50"
                     >
                       {tech}
                     </span>
