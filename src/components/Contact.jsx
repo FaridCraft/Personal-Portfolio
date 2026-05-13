@@ -19,11 +19,11 @@ export function Contact() {
     setIsSubmitting(true);
 
         const templateParams = {
-      name: formState.name,              // ✅ fixed (was user_name)
-      email: formState.email,            // ✅ fixed (was user_email)
+      name: formState.name,              
+      email: formState.email,            
       message: formState.message,
-      title: "Portfolio Contact",        // ✅ added
-      time: new Date().toLocaleString(), // ✅ added
+      title: "Portfolio Contact",        
+      time: new Date().toLocaleString(), 
     };
 
     try {
