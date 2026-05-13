@@ -18,11 +18,12 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const templateParams = {
-      user_name: formState.name,
-      user_email: formState.email,
+        const templateParams = {
+      name: formState.name,              // ✅ fixed (was user_name)
+      email: formState.email,            // ✅ fixed (was user_email)
       message: formState.message,
-      to_email: "faridullah.dev01@gmail.com",
+      title: "Portfolio Contact",        // ✅ added
+      time: new Date().toLocaleString(), // ✅ added
     };
 
     try {
