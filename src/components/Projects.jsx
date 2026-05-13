@@ -100,7 +100,7 @@ export function Projects() {
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 sm:mt-4 px-4">
             My Featured Work{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
               Projects
             </span>
           </h2>
